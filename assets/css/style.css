@@ -2,3 +2,7 @@ html {
     background: url("../images/background.jpg") no-repeat center fixed;
     background-size: cover;
 }
+header {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+}

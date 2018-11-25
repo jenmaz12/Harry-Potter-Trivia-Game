@@ -1,7 +1,7 @@
-$(window).ready(function(){
+$(document).ready(function(){
     $(".trivia").hide();
     $("#time").hide();   
-});
+
 
 $("button").on("click",function(){
     var i;
@@ -9,6 +9,7 @@ $("button").on("click",function(){
         // show trivia question and timer
         $("#trivia"+i).show();
         $("#time").show();
+        $("button").hide();
         
         // set counter to 30
         var number = 30;
@@ -35,9 +36,19 @@ $("button").on("click",function(){
                 stop();
 
                 //  Alert the user that time is up.
-                alert("Time Up!");
+                alert("Time's Up!");
             };
         };
+
+        //  The stop function
+        function stop() {
+
+        //  Clears our intervalId
+        //  We just pass the name of the interval
+        //  to the clearInterval function.
+        clearInterval(intervalId);
+      };
         // Execute run function
         run ();
 }});
+});
