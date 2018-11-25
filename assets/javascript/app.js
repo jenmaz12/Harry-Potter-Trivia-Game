@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $(".trivia").hide();
-    $("#time").hide();   
+    $("#time").hide();
+    $("#alert").hide();   
 
 
 $("button").on("click",function(){
@@ -35,7 +36,8 @@ $("button").on("click",function(){
                 stop();
 
                 //  Alert the user that time is up.
-                alert("Time's Up!");
+                $("#alert").html("Time's Up!");
+                $("#alert").show();
                 // hide incorrect answers
                 $(".incorrect"+count).hide();
             };
