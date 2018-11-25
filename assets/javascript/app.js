@@ -38,5 +38,6 @@ $("button").on("click",function(){
                 alert("Time Up!");
             };
         };
+        // Execute run function
         run ();
 }});
