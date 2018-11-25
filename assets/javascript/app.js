@@ -4,10 +4,9 @@ $(document).ready(function(){
 
 
 $("button").on("click",function(){
-    var i;
-    for(i=1; i < 11; i++) {
+    var count = 1;
         // show trivia question and timer
-        $("#trivia"+i).show();
+        $("#trivia"+count).show();
         $("#time").show();
         $("button").hide();
         
@@ -37,6 +36,8 @@ $("button").on("click",function(){
 
                 //  Alert the user that time is up.
                 alert("Time's Up!");
+                // hide incorrect answers
+                $(".incorrect"+count).hide();
             };
         };
 
@@ -50,5 +51,5 @@ $("button").on("click",function(){
       };
         // Execute run function
         run ();
-}});
+});
 });
