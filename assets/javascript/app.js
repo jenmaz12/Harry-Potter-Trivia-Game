@@ -5,10 +5,20 @@ $(document).ready(function(){
 
 
 $("button").on("click",function(){
-    var count = 1;
+    var count = 0;
         // show trivia question and timer
+    function displayQuestion() {
+        $("#trivia"+count).hide();
+        $("#alert").hide();
+        count++;
         $("#trivia"+count).show();
+        $("#time").html(30);
         $("#time").show();
+        number = 30;
+        run();
+    }
+        displayQuestion ();
+        
         $("button").hide();
         
         // set counter to 30
@@ -22,7 +32,7 @@ $("button").on("click",function(){
           };
         
         // define decrement function
-          function decrement() {
+        function decrement() {
             //  Decrease number by one.
             number--;
 
@@ -53,5 +63,17 @@ $("button").on("click",function(){
       };
         // Execute run function
         run ();
+
+        $("#correct"+count).on("click", function(){
+            // show correct alert
+            $("#alert").html("That's Correct!");
+            $("#alert").show();
+            // hide incorrect answers
+            $(".incorrect"+count).hide();
+            // stop and hide timer
+            stop();
+            $("#time").hide();
+            setTimeout(displayQuestion,1000*5);
+        })
 });
 });
