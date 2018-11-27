@@ -7,8 +7,9 @@ var count = 0;
 function displayQuestion() {
     $("#trivia"+count).hide();
     $("#alert").hide();
-    count++;
+    count=count+1;
     $("#trivia"+count).show();
+    $(".incorrect").show();
     $("#time").html(30);
     $("#time").show();
     number = 30;
@@ -42,7 +43,7 @@ function decrement() {
         $("#alert").html("Time's Up!");
         $("#alert").show();
         // hide incorrect answers
-        $(".incorrect"+count).hide();
+        $(".incorrect").hide();
     };
 };
 
@@ -60,15 +61,17 @@ $("button").on("click",function(){
         run ();
 });
 
-$("#correct"+count).on("click", function(){
+$(".correct").on("click", function(){
     // show correct alert
     $("#alert").html("That's Correct!");
     $("#alert").show();
     // hide incorrect answers
-    $(".incorrect"+count).hide();
+    $(".incorrect").hide();
     // stop and hide timer
     stop();
     $("#time").hide();
     setTimeout(displayQuestion,1000*5);
 })
+
+
 });
