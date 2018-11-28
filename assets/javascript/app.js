@@ -11,12 +11,18 @@ function displayQuestion() {
     $("#trivia"+count).hide();
     $("#alert").hide();
     count=count+1;
+    if (count<11) {
     $("#trivia"+count).show();
     $(".incorrect").show();
     $("#time").html(30);
     $("#time").show();
     number = 30;
     run();
+}
+else {
+    $("#alert").html("Game Over!");
+    $("#alert").show();
+}
 };
 // set counter to 30
 var number = 30;
