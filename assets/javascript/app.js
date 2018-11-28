@@ -3,7 +3,10 @@ $(document).ready(function(){
     $("#time").hide();
     $("#alert").hide();   
 var count = 0;
-    // show trivia question and timer
+// define correct and incorrect counts
+var correct = 0;
+var incorrect = 0;  
+// show trivia question and timer
 function displayQuestion() {
     $("#trivia"+count).hide();
     $("#alert").hide();
@@ -62,6 +65,9 @@ $("button").on("click",function(){
 });
 
 $(".correct").on("click", function(){
+    // add one to correct
+    correct = correct +1;
+    console.log(correct);
     // show correct alert
     $("#alert").html("That's Correct!");
     $("#alert").show();
@@ -73,5 +79,19 @@ $(".correct").on("click", function(){
     setTimeout(displayQuestion,1000*5);
 })
 
+$(".incorrect").on("click", function(){
+    // add one to incorrect
+    incorrect = incorrect +1;
+    console.log(incorrect);
+    // show correct alert
+    $("#alert").html("Sorry, That's Incorrect. The Correct Answer Is:");
+    $("#alert").show();
+    // hide incorrect answers
+    $(".incorrect").hide();
+    // stop and hide timer
+    stop();
+    $("#time").hide();
+    setTimeout(displayQuestion,1000*5);
+})
 
 });

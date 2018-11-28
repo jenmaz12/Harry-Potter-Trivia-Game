@@ -11,6 +11,7 @@ header {
 #button {
     width: 100px;
     margin: auto;
+    font-family: 'Open Sans', sans-serif;
 }
 
 button {
@@ -19,19 +20,40 @@ button {
     width: 100px;
     padding: 10px;
     margin: auto;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .trivia {
-    width: 50%;
+    width: 66%;
+    padding: 10px;
     margin: auto;
     text-align: center;
     font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+    font-weight: bold;
 }
 
 #time {
     text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
 }
 
 #alert {
     text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px;
+}
+
+#content {
+    width: 75%;
+    margin: auto;
+    height: auto;
+    background-color: rgba(226,253,244, .5);
+    overflow: auto;
+    padding: 10px;
 }
