@@ -25,6 +25,7 @@ button {
     width: 50%;
     margin: auto;
     text-align: center;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #time {
