@@ -57,3 +57,27 @@ button {
     overflow: auto;
     padding: 10px;
 }
+
+#score {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    padding: 10px;
+}
+
+#correctCount {
+    display: inline;
+}
+
+#incorrectCount {
+    display: inline;
+}
+
+#unansweredCount {
+    display: inline;
+}
+
+p {
+    display: inline;
+    line-height: 1.5;
+}

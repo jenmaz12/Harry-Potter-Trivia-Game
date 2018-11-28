@@ -1,11 +1,13 @@
 $(document).ready(function(){
     $(".trivia").hide();
     $("#time").hide();
-    $("#alert").hide();   
+    $("#alert").hide();
+    $("#score").hide();  
 var count = 0;
 // define correct and incorrect counts
 var correct = 0;
-var incorrect = 0;  
+var incorrect = 0;
+var unanswered = 0;  
 // show trivia question and timer
 function displayQuestion() {
     $("#trivia"+count).hide();
@@ -20,8 +22,11 @@ function displayQuestion() {
     run();
 }
 else {
+    // alert user Game Over
     $("#alert").html("Game Over!");
     $("#alert").show();
+    // show score
+    $("#score").show();
 }
 };
 // set counter to 30
@@ -49,10 +54,16 @@ function decrement() {
         stop();
 
         //  Alert the user that time is up.
-        $("#alert").html("Time's Up!");
+        $("#alert").html("Time's Up! The Correct Answer Was:");
         $("#alert").show();
         // hide incorrect answers
         $(".incorrect").hide();
+        // Add to unansweredCount
+        unanswered = unanswered + 1;
+        $("#unansweredCount").html(unanswered);
+        // run displayQuestion
+        $("#time").hide();
+        setTimeout(displayQuestion,1000*5);
     };
 };
 
@@ -74,6 +85,8 @@ $(".correct").on("click", function(){
     // add one to correct
     correct = correct +1;
     console.log(correct);
+    // add new correct to correct count
+    $("#correctCount").html(correct);
     // show correct alert
     $("#alert").html("That's Correct!");
     $("#alert").show();
@@ -89,6 +102,8 @@ $(".incorrect").on("click", function(){
     // add one to incorrect
     incorrect = incorrect +1;
     console.log(incorrect);
+    // add new correct to correct count
+    $("#incorrectCount").html(incorrect);
     // show correct alert
     $("#alert").html("Sorry, That's Incorrect. The Correct Answer Is:");
     $("#alert").show();
