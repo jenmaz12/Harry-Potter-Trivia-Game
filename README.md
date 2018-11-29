@@ -1,4 +1,4 @@
-##Harry Potter Trivia Game
+## Harry Potter Trivia Game
 In this game, the user presses the "Start" button to display the first of ten Harry Potter-themed trivia questions. The user is presented with one question at a time and has 30 seconds to answer the question. They are then alerted if their answer was correct or incorrect (or if time ran out), and the next question automatically displays. After completing all ten questions, the user is presented with a Game Over message, how many questions they got correct, incorrect or unanswered, and they have the option to start the trivia game over by pressing the "Start Over" button.
 
 To create this game, I used a combination of HTML, CSS, JavaScript, and jQuery. Specifically, I used setTimeout functions to set the timer for each question and the length of time each message displays to the user.
