@@ -2,7 +2,8 @@ $(document).ready(function(){
     $(".trivia").hide();
     $("#time").hide();
     $("#alert").hide();
-    $("#score").hide();  
+    $("#score").hide();
+    $("#startOver").hide();  
 var count = 0;
 // define correct and incorrect counts
 var correct = 0;
@@ -13,10 +14,10 @@ function displayQuestion() {
     $("#trivia"+count).hide();
     $("#alert").hide();
     count=count+1;
-    if (count<11) {
+if (count<11) {
     $("#trivia"+count).show();
     $(".incorrect").show();
-    $("#time").html(30);
+    $("#time").html("<h2>Time Remaining: 30</h2>");
     $("#time").show();
     number = 30;
     run();
@@ -27,6 +28,8 @@ else {
     $("#alert").show();
     // show score
     $("#score").show();
+    // show start over button
+    $("#startOver").show();
 }
 };
 // set counter to 30
@@ -45,7 +48,7 @@ function decrement() {
     number--;
 
     //  Show the number in the #time tag.
-    $("#time").html("<h2>" + number + "</h2>");
+    $("#time").html("<h2>Time Remaining: " + number + "</h2>");
 
     //  Once number hits zero...
     if (number === 0) {
@@ -74,9 +77,9 @@ function stop() {
 clearInterval(intervalId);
 };
 
-$("button").on("click",function(){
+$("#start").on("click",function(){
         displayQuestion ();
-        $("button").hide();        
+        $("#start").hide();        
         // Execute run function
         run ();
 });
@@ -115,4 +118,17 @@ $(".incorrect").on("click", function(){
     setTimeout(displayQuestion,1000*5);
 })
 
+$("#startOver").on("click", function(){
+    // hide alert, score, and start over button
+    $("#alert").hide();
+    $("#score").hide();
+    $("#startOver").hide();
+    // reset correct, incorrect, unanswered and count to 0
+    correct = 0;
+    incorrect = 0;
+    unanswered = 0;
+    count = 0;
+    // run displayQuestion function
+    displayQuestion();
+})
 });

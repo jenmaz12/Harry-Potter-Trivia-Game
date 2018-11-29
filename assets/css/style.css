@@ -8,13 +8,13 @@ header {
     padding: 10px;
     text-align: center;
 }
-#button {
+.button {
     width: 100px;
     margin: auto;
     font-family: 'Open Sans', sans-serif;
 }
 
-button {
+#start, #startOver {
     text-align: center;
     position: relative;
     width: 100px;
@@ -39,6 +39,7 @@ button {
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
+    display: inline;
 }
 
 #alert {
@@ -52,10 +53,15 @@ button {
 #content {
     width: 75%;
     margin: auto;
-    height: auto;
+    min-height: 75vh;
     background-color: rgba(226,253,244, .5);
     overflow: auto;
     padding: 10px;
+    vertical-align: center;
+}
+
+li:hover {
+    background-color: rgba(113,139,162, .5);
 }
 
 #score {
@@ -80,4 +86,6 @@ button {
 p {
     display: inline;
     line-height: 1.5;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
 }
